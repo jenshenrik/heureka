@@ -50,6 +50,10 @@ public class Edge {
 		int y = to.getY() - from.getY();
 		this.weight = Math.sqrt(x*x + y*y);
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> c354573b272feba1fefd176031c7fc1c85db86b3
 	@Override
 	public boolean equals(Object obj) {
 		if (!(obj instanceof Edge)) return false;
