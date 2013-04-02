@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class Graph {
 
-	private Set<Node> nodes;
+	private ArrayList<Node> nodes;
 	private ArrayList<Edge> edges;
 	
 	public Graph(String path) {
@@ -25,13 +25,28 @@ public class Graph {
 			String line;
 			while ((line = br.readLine()) != null) {
 				String data[] = line.split(" ");
-				
-				Node from = new Node(Integer.parseInt(data[0]), Integer.parseInt(data[1]));
-				Node to = new Node(Integer.parseInt(data[3]), Integer.parseInt(data[4]));
+				// Parse line
+				int x1 = Integer.parseInt(data[0]);
+				int y1 = Integer.parseInt(data[1]);
+				int x2 = Integer.parseInt(data[3]);
+				int y2 = Integer.parseInt(data[4]);
 				String name = data[2];
 				
-				nodes.add(from);
-				nodes.add(to);
+				Node from = new Node(x1, y1);
+				Node to = new Node(x2, y2);
+				// Get nodes, if exists
+				for (Node n : nodes) {
+					if (n.equals(from))
+						from = n;
+					if (n.equals(to))
+						to = n;
+				}
+				// If nodes not exist, add
+				if (!nodes.contains(from))
+					nodes.add(from);
+				if (!nodes.contains(to))
+					nodes.add(to);
+				// Add edge
 				edges.add(new Edge(from, to, name));
 			}
 		} catch (FileNotFoundException e) {
