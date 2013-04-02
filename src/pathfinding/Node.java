@@ -1,8 +1,12 @@
 package pathfinding;
 
+import java.util.ArrayList;
+
 public class Node {
 
 	private int x, y;
+	private boolean visited = false;
+	private ArrayList<Edge> edges = new ArrayList<Edge>();
 	
 	public Node(int x, int y) {
 		this.x = x;
@@ -25,6 +29,14 @@ public class Node {
 		this.y = y;
 	}
 	
+	public void isVisited(boolean visited) {
+		this.visited = visited;
+	}
+	
+	public void addPath(Edge edge) {
+		edges.add(edge);
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (!(obj instanceof Node)) return false;
