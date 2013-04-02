@@ -29,8 +29,12 @@ public class Node {
 		this.y = y;
 	}
 	
-	public void isVisited(boolean visited) {
+	public void setVisited(boolean visited) {
 		this.visited = visited;
+	}
+	
+	public boolean getVisited() {
+		return this.visited; 
 	}
 	
 	public void addPath(Edge edge) {
