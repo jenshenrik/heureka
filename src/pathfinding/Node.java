@@ -42,8 +42,30 @@ public class Node implements Comparable<Node>{
 		edges.add(edge);
 	}
 
+	public double getF() {
+		return f;
+	}
+	
+	public void setF(double f) {
+		this.f = f;
+	}
+	
+	public double getG() {
+		return g;
+	}
+	
+	public void setG(double g) {
+		this.g = g;
+	}
+	
 	public double getTotalDistance() {
 		return f+g;
+	}
+	
+	public double distanceTo(Node n) {
+		double distX = n.getX() - this.x;
+		double distY = n.getY() - this.y;
+		return Math.sqrt(distX*distX + distY*distY);
 	}
 	
 	@Override
