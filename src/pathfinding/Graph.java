@@ -17,6 +17,10 @@ public class Graph {
 		readFile(path);
 	}
 	
+	public boolean contains(Node n) {
+		return nodes.contains(n);
+	}
+	
 	private void readFile(String path) {
 		try {
 			FileInputStream fin = new FileInputStream(path);
