@@ -2,11 +2,12 @@ package pathfinding;
 
 import java.util.ArrayList;
 
-public class Node {
+public class Node implements Comparable<Node>{
 
 	private int x, y;
 	private boolean visited = false;
 	private ArrayList<Edge> edges = new ArrayList<Edge>();
+	private double f, g;
 	
 	public Node(int x, int y) {
 		this.x = x;
@@ -41,12 +42,26 @@ public class Node {
 		edges.add(edge);
 	}
 
+	public double getTotalDistance() {
+		return f+g;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (!(obj instanceof Node)) return false;
 		
 		Node n = (Node)obj;
 		return (n.x == this.x && n.y == this.y); 
+	}
+
+	@Override
+	public int compareTo(Node o) {
+		double totalDistance = f + g;
+		if (totalDistance < o.getTotalDistance())
+			return -1;
+		if (totalDistance > o.getTotalDistance())
+			return 1;
+		return 0;
 	}
 	
 }
