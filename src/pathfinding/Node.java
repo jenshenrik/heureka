@@ -1,17 +1,19 @@
 package pathfinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Node implements Comparable<Node>{
 
 	private int x, y;
 	private boolean visited = false;
-	private ArrayList<Edge> edges = new ArrayList<Edge>();
+	private List<Edge> edges;
 	private double h, g;
 	
 	public Node(int x, int y) {
 		this.x = x;
 		this.y = y;
+		this.edges = new ArrayList<Edge>();
 	}
 	
 	public int getX() {
@@ -84,6 +86,10 @@ public class Node implements Comparable<Node>{
 		if (totalDistance > o.getTotalDistance())
 			return 1;
 		return 0;
+	}
+
+	public List<Edge> getEdges() {
+		return edges;
 	}
 	
 }
