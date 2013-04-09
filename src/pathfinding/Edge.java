@@ -1,5 +1,9 @@
 package pathfinding;
 
+
+/*
+ * Edges class - Contains info about itself and the nodes it connects.
+ */
 public class Edge {
 
 	private Node from;

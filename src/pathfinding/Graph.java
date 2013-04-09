@@ -8,6 +8,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Set;
 
+/*
+ * Reads the graph file, and loads the information into nodes and edges.
+ */
+
 public class Graph {
 
 	private ArrayList<Node> nodes;

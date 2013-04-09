@@ -2,6 +2,9 @@ package pathfinding;
 
 import java.util.ArrayList;
 
+/*
+ * Node class - contains information about it self and its edges
+ */
 public class Node implements Comparable<Node>{
 
 	private int x, y;
