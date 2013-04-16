@@ -1,5 +1,9 @@
 package pathfinding;
 
+
+/*
+ * Edges class - Contains info about itself and the nodes it connects.
+ */
 public class Edge {
 
 	private Node from;
@@ -59,5 +63,15 @@ public class Edge {
 		return (e.from.equals(this.from) && 
 				e.to.equals(this.to) && 
 				e.name.equals(this.name));
+	}
+	
+	public String toString()
+	{
+		String result = "";
+		
+		result += "Name: " + getName() + ", ";
+		result += "leads to: " + getTo();
+		
+		return result;
 	}
 }

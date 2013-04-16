@@ -8,12 +8,19 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Set;
 
+/*
+ * Reads the graph file, and loads the information into nodes and edges.
+ */
+
 public class Graph {
 
 	private ArrayList<Node> nodes;
 	private ArrayList<Edge> edges;
 	
 	public Graph(String path) {
+
+		nodes = new ArrayList<Node>();
+		edges = new ArrayList<Edge>();
 		readFile(path);
 	}
 	
@@ -53,6 +60,11 @@ public class Graph {
 				// Add edge
 				edges.add(new Edge(from, to, name));
 			}
+			for (int i = 0; i < edges.size(); i++)
+			{
+				System.out.println(nodes.get(i).toString() + edges.get(i).toString());
+			}
+			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -60,5 +72,12 @@ public class Graph {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+	@Override
+	public String toString()
+	{
+		String result ="cake";
+		return result;	
 	}
 }

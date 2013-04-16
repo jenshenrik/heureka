@@ -3,6 +3,9 @@ package pathfinding;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Node class - contains information about it self and its edges
+ */
 public class Node implements Comparable<Node>{
 
 	private int x, y;
@@ -90,6 +93,15 @@ public class Node implements Comparable<Node>{
 
 	public List<Edge> getEdges() {
 		return edges;
+	}
+	
+	public String toString()
+	{
+		String result = "";
+		result += "X: " + getX() + " ";
+		result += "Y: " + getY() + " ";
+		
+		return result;
 	}
 	
 }
