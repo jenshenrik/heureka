@@ -7,12 +7,14 @@ import java.util.List;
 public class Pathfinder {
 
 	private Graph graph;
+	private IHeuristic h;
 	
 	public Pathfinder(Graph g) {
 		this.graph = g;
 	}
 	
 	public void aStar(Node start, Node goal) {
+		this.h = new StraightLineDistanceHeuristic();
 		if (!graph.contains(start) || !graph.contains(goal)) {
 			// Fail -- start or goal node not in graph
 		}
@@ -37,13 +39,29 @@ public class Pathfinder {
 			for (Edge e : current.getEdges()) {
 				// Get destination nodes
 				Node n = e.getTo();
-				
+				boolean neighborIsBetter;
 				// Check if n is already visited
 				if (closedList.contains(n)) {
 					continue;
 				}
 				
 				// Calculate distance from start to neighbor
+				double neighborDistFromStart = current.getG() + current.distanceTo(n);
+				
+				if (!openList.contains(n)) {
+					openList.add(n);
+					neighborIsBetter = true;
+				} else if (neighborDistFromStart < current.getG()) {
+					neighborIsBetter = true;
+				} else {
+					neighborIsBetter = false;
+				}
+				
+				if (neighborIsBetter) {
+					// set previous node of n to current
+					n.setG(neighborDistFromStart);
+					n.setH(h.getHeuristicDistance(n, goal));
+				}
 			}
 		}
 		
@@ -57,6 +75,10 @@ public class Pathfinder {
 			nodes = new ArrayList<Node>();
 		}
 		
+		public boolean contains(Node n) {
+			return nodes.contains(n);
+		}
+
 		protected void add(Node n) {
 			nodes.add(n);
 			Collections.sort(this.nodes);
