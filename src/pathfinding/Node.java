@@ -10,7 +10,7 @@ public class Node implements Comparable<Node>{
 	private int x, y;
 	private boolean visited = false;
 	private ArrayList<Edge> edges = new ArrayList<Edge>();
-	private double f, g;
+	private double h, g;
 	
 	public Node(int x, int y) {
 		this.x = x;
@@ -45,12 +45,12 @@ public class Node implements Comparable<Node>{
 		edges.add(edge);
 	}
 
-	public double getF() {
-		return f;
+	public double getH() {
+		return h;
 	}
 	
-	public void setF(double f) {
-		this.f = f;
+	public void setH(double h) {
+		this.h = h;
 	}
 	
 	public double getG() {
@@ -62,7 +62,7 @@ public class Node implements Comparable<Node>{
 	}
 	
 	public double getTotalDistance() {
-		return f+g;
+		return h+g;
 	}
 	
 	public double distanceTo(Node n) {
@@ -81,7 +81,7 @@ public class Node implements Comparable<Node>{
 
 	@Override
 	public int compareTo(Node o) {
-		double totalDistance = f + g;
+		double totalDistance = getTotalDistance();
 		if (totalDistance < o.getTotalDistance())
 			return -1;
 		if (totalDistance > o.getTotalDistance())
