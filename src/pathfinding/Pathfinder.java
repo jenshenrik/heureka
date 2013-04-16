@@ -61,7 +61,7 @@ public class Pathfinder {
 				}
 				
 				if (neighborIsBetter) {
-					// set previous node of n to current
+					n.setIncoming(e);
 					n.setG(neighborDistFromStart);
 					n.setH(h.getHeuristicDistance(n, goal));
 				}
