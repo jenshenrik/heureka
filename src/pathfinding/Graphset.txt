@@ -5,3 +5,5 @@
 50 30 LaRoueCinque 70 40
 70 40 LaRoueSixieme 75 40
 50 30 NoWhereRoad 75 35
+30 40 Omvej 80 50
+80 50 Genvej 75 45
