@@ -16,10 +16,11 @@ public class Pathfinder {
 		this.graph = g;
 	}
 	
-	public void aStar(Node start, Node goal) {
+	public Path aStar(Node start, Node goal) {
 		this.h = new StraightLineDistanceHeuristic();
 		if (!graph.contains(start) || !graph.contains(goal)) {
 			// Fail -- start or goal node not in graph
+			return null;
 		}
 		
 		ArrayList<Node> closedList = new ArrayList<Node>();
@@ -31,7 +32,7 @@ public class Pathfinder {
 			
 			// Check if goal reached
 			if (current.equals(goal)) {
-				// Done, return path
+				new Path(goal);
 			}
 			
 			// Move current node to visited lists
@@ -69,6 +70,7 @@ public class Pathfinder {
 		}
 		
 		// Return no path found
+		return null;
 	}
 	
 	private class SortedList {
