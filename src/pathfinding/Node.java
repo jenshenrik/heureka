@@ -89,4 +89,13 @@ public class Node implements Comparable<Node>{
 		return 0;
 	}
 	
+	public String toString()
+	{
+		String result = "";
+		result += "X: " + getX() + " ";
+		result += "Y: " + getY() + " ";
+		
+		return result;
+	}
+	
 }

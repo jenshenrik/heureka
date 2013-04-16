@@ -64,4 +64,14 @@ public class Edge {
 				e.to.equals(this.to) && 
 				e.name.equals(this.name));
 	}
+	
+	public String toString()
+	{
+		String result = "";
+		
+		result += "Name: " + getName() + ", ";
+		result += "leads to: " + getTo();
+		
+		return result;
+	}
 }
