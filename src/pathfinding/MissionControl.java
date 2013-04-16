@@ -9,7 +9,7 @@ public class MissionControl {
 		String path = "src/pathfinding/Graphset.txt";
 		Graph graphical = new Graph(path);
 		Node start = graphical.getNode(10, 20);
-		Node goal = graphical.getNode(75, 40);
+		Node goal = graphical.getNode(75, 45);
 		
 		Pathfinder pf = new Pathfinder(graphical);
 		Path route = pf.aStar(start, goal);

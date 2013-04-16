@@ -1,9 +1,9 @@
 10 20 Erstenweg 30 40
-30 40 Zweitemweg 50 30
-50 30 Dritteweg 60 25
+30 40 Zweitemweg 50 50
+50 50 Dritteweg 60 25
 60 25 Viertemweg 65 20
-50 30 LaRoueCinque 70 40
+50 50 LaRoueCinque 70 40
 70 40 LaRoueSixieme 75 40
-50 30 NoWhereRoad 75 35
-30 40 Omvej 80 50
-80 50 Genvej 75 45
+50 50 NoWhereRoad 75 35
+30 40 Omvej 80 70
+80 70 Genvej 75 45 

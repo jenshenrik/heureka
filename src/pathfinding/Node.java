@@ -18,6 +18,7 @@ public class Node implements Comparable<Node>{
 		this.x = x;
 		this.y = y;
 		this.edges = new ArrayList<Edge>();
+		this.h = Double.MAX_VALUE;
 	}
 	
 	public Edge getIncoming() {
