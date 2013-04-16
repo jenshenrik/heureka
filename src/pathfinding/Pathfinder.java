@@ -18,13 +18,21 @@ public class Pathfinder {
 	
 	public Path aStar(Node start, Node goal) {
 		this.h = new StraightLineDistanceHeuristic();
-		if (!graph.contains(start) || !graph.contains(goal)) {
+		if (!graph.contains(start)) {
 			// Fail -- start or goal node not in graph
+			System.out.println("start not in graph");
+			return null;
+		}
+		
+		if (!graph.contains(goal)) {
+			System.out.println("goal not in graph");
 			return null;
 		}
 		
 		ArrayList<Node> closedList = new ArrayList<Node>();
 		SortedList openList = new SortedList();
+
+		openList.add(start);
 		
 		// Loop while open-list has nodes
 		while (!openList.isEmpty()) {
@@ -32,7 +40,7 @@ public class Pathfinder {
 			
 			// Check if goal reached
 			if (current.equals(goal)) {
-				new Path(goal);
+				return new Path(goal);
 			}
 			
 			// Move current node to visited lists

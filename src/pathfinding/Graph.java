@@ -27,6 +27,14 @@ public class Graph {
 	public boolean contains(Node n) {
 		return nodes.contains(n);
 	}
+
+	public Node getNode(int x, int y) {
+		for (Node n : nodes) {
+			if (n.getX() == x && n.getY() == y)
+				return n;
+		}
+		return null;
+	}
 	
 	private void readFile(String path) {
 		try {
@@ -58,7 +66,9 @@ public class Graph {
 				if (!nodes.contains(to))
 					nodes.add(to);
 				// Add edge
-				edges.add(new Edge(from, to, name));
+				Edge e = new Edge(from, to, name);
+				edges.add(e);
+				from.addPath(e);
 			}
 			/* Test af graph contents.
 			for (int i = 0; i < edges.size(); i++)
