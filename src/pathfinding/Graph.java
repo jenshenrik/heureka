@@ -60,10 +60,12 @@ public class Graph {
 				// Add edge
 				edges.add(new Edge(from, to, name));
 			}
+			/* Test af graph contents.
 			for (int i = 0; i < edges.size(); i++)
 			{
 				System.out.println(nodes.get(i).toString() + edges.get(i).toString());
 			}
+			*/
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -73,11 +75,5 @@ public class Graph {
 			e.printStackTrace();
 		}
 		
-	}
-	@Override
-	public String toString()
-	{
-		String result ="cake";
-		return result;	
 	}
 }
