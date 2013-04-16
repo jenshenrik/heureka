@@ -1,3 +1,7 @@
 10 20 Erstenweg 30 40
 30 40 Zweitemweg 50 30
 50 30 Dritteweg 60 25
+60 25 Viertemweg 65 20
+50 30 LaRoueCinque 70 40
+70 40 LaRoueSixieme 75 40
+50 30 NoWhereRoad 75 35
