@@ -12,11 +12,20 @@ public class Node implements Comparable<Node>{
 	private boolean visited = false;
 	private List<Edge> edges;
 	private double h, g;
+	private Edge incoming;
 	
 	public Node(int x, int y) {
 		this.x = x;
 		this.y = y;
 		this.edges = new ArrayList<Edge>();
+	}
+	
+	public Edge getIncoming() {
+		return this.incoming;
+	}
+
+	public void setIncoming(Edge e) {
+		this.incoming = e;
 	}
 	
 	public int getX() {
