@@ -1,4 +1,6 @@
-package pathfinding;
+package heuristic;
+
+import graph.Node;
 
 public class StraightLineDistanceHeuristic implements IHeuristic {
 

@@ -1,5 +1,8 @@
 package pathfinding;
 
+import graph.Graph;
+import graph.Node;
+
 public class MissionControl {
 
 	/**

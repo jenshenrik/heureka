@@ -1,5 +1,7 @@
 package pathfinding;
 
+import graph.Node;
+
 import java.util.ArrayList;
 
 public class Path {

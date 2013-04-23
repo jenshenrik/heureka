@@ -1,5 +1,11 @@
 package pathfinding;
 
+import graph.Edge;
+import graph.Graph;
+import graph.Node;
+import heuristic.IHeuristic;
+import heuristic.StraightLineDistanceHeuristic;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
